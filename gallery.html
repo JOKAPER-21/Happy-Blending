@@ -4,30 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JOKAPER | Gallery</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 50;
-    }
-    .modal img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 1rem;
-    }
-    .modal.open {
-      display: flex;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-gray-950 text-white font-sans">
 
@@ -49,10 +26,10 @@
     <h2 class="text-4xl font-bold text-center mb-2">My Gallery</h2>
     <p class="text-center text-gray-400 mb-12">Happy Blending!</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
+
       <!-- Image 1 -->
       <div class="relative group rounded-lg overflow-hidden shadow-md cursor-pointer">
-        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/Die Baby.png" alt="3D Art 1" class="w-full h-full object-cover" />
+        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/Die%20Baby.png" alt="3D Art 1" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 flex flex-col justify-end">
           <h3 class="text-white text-lg font-semibold">Die Baby</h3>
           <p class="text-sm text-gray-300">April 10, 2025</p>
@@ -108,31 +85,10 @@
   </div>
 </section>
 
-
-<!-- Modal for fullscreen image -->
-<div id="imgModal" class="modal" onclick="closeModal()">
-  <img id="modalImg" src="" alt="Fullscreen Image" />
-</div>
-
 <!-- Footer -->
 <footer class="text-center text-gray-500 py-6">
   &copy; 2025 JOKAPER. All rights reserved.
 </footer>
-
-<script>
-  const modal = document.getElementById('imgModal');
-  const modalImg = document.getElementById('modalImg');
-  document.querySelectorAll('#gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-      modal.classList.add('open');
-      modalImg.src = img.src;
-    });
-  });
-  function closeModal() {
-    modal.classList.remove('open');
-    modalImg.src = '';
-  }
-</script>
 
 </body>
 </html>
