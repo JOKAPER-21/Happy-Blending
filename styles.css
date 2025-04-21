@@ -26,6 +26,44 @@ footer {
   color: #aaa;
 }
 
+/* Contact Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+input, textarea {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #2D2D2D;
+  border: 1px solid #444;
+  color: white;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #58A6FF;
+  outline: none;
+}
+
+button {
+  background-color: #58A6FF;
+  color: white;
+  font-size: 1.125rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4589E6;
+}
+
+button:active {
+  background-color: #357ABD;
+}
+
 /* Gallery Image Styles */
 .relative.group {
   position: relative;
