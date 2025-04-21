@@ -1,25 +1,29 @@
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  background-color: #1F1F1F;
 }
 
-.modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 1rem;
+/* Navigation Styles */
+nav {
+  background-color: #2D2D2D;
 }
 
-.modal.open {
-  display: flex;
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: #58A6FF;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #aaa;
 }
 
 /* Gallery Image Styles */
