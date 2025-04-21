@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOKAPER | Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 1rem;
+    }
+    .modal.open {
+      display: flex;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-gray-900 p-4">
+    <div class="max-w-[1170px] mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">JOKAPER</h1>
+      <a href="index.html" class="text-blue-500 hover:underline">Home</a>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 px-4">
+    <div class="max-w-[1170px] mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-2">My Gallery</h2>
+      <p class="text-center text-gray-400 mb-12">Happy Blending!</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example images (replace with your own URLs) -->
+        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/I%20Got%20You%20Angel.png" class="rounded-lg shadow-md cursor-pointer" alt="3D Art 1">
+        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/I%20Got%20You%20Angel.png" class="rounded-lg shadow-md cursor-pointer" alt="3D Art 2">
+        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/I%20Got%20You%20Angel.png" class="rounded-lg shadow-md cursor-pointer" alt="3D Art 3">
+        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/I%20Got%20You%20Angel.png" class="rounded-lg shadow-md cursor-pointer" alt="3D Art 4">
+        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/I%20Got%20You%20Angel.png" class="rounded-lg shadow-md cursor-pointer" alt="3D Art 5">
+        <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/I%20Got%20You%20Angel.png" class="rounded-lg shadow-md cursor-pointer" alt="3D Art 6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for fullscreen image -->
+  <div id="imgModal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Fullscreen Image" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 py-6">
+    &copy; 2025 JOKAPER. All rights reserved.
+  </footer>
+
+  <script>
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    document.querySelectorAll('#gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        modal.classList.add('open');
+        modalImg.src = img.src;
+      });
+    });
+    function closeModal() {
+      modal.classList.remove('open');
+      modalImg.src = '';
+    }
+  </script>
+
+</body>
+</html>
