@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +18,20 @@
       align-items: center;
       z-index: 50;
     }
+
     .modal img {
       max-width: 90%;
       max-height: 90%;
       border-radius: 1rem;
     }
+
     .modal.open {
       display: flex;
+    }
+
+    /* Background blur effect */
+    .blurred {
+      filter: blur(5px);
     }
   </style>
 </head>
@@ -121,15 +127,20 @@
 <script>
   const modal = document.getElementById('imgModal');
   const modalImg = document.getElementById('modalImg');
+  const body = document.body;
+
   document.querySelectorAll('#gallery img').forEach(img => {
     img.addEventListener('click', () => {
       modal.classList.add('open');
       modalImg.src = img.src;
+      body.classList.add('blurred'); // Add blur effect to body when modal is open
     });
   });
+
   function closeModal() {
     modal.classList.remove('open');
     modalImg.src = '';
+    body.classList.remove('blurred'); // Remove blur effect when modal is closed
   }
 </script>
 
