@@ -149,38 +149,55 @@
     &copy; 2025 JOKAPER. All rights reserved.
   </footer>
 
-  <script>
-    const modal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImg');
-    const imageCards = Array.from(document.querySelectorAll('#gallery .group'));
-    let currentIndex = 0;
-  
-    function openModal(container) {
-      currentIndex = imageCards.indexOf(container);
-      showImage(currentIndex);
-      modal.classList.add('open');
-    }
-  
-    function closeModal() {
-      modal.classList.remove('open');
-      modalImg.src = '';
-    }
-  
-    function showImage(index) {
-      const img = imageCards[index].querySelector('img');
-      modalImg.src = img.src;
-    }
-  
-    function showNextImage() {
-      currentIndex = (currentIndex + 1) % imageCards.length;
-      showImage(currentIndex);
-    }
-  
-    function showPrevImage() {
-      currentIndex = (currentIndex - 1 + imageCards.length) % imageCards.length;
-      showImage(currentIndex);
-    }
-  </script>
+<script>
+  // Modal elements
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+
+  // Array to store images from the clicked card
+  let currentImages = [];
+  let currentImageIndex = 0;
+
+  // Open the modal and load images from data attribute
+  function openModal(container) {
+    const images = container.getAttribute('data-images');
+    if (!images) return;
+
+    currentImages = images.split(',');
+    currentImageIndex = 0;
+    showImage(currentImageIndex);
+    modal.classList.add('open');
+  }
+
+  // Close the modal
+  function closeModal() {
+    modal.classList.remove('open');
+    modalImg.src = '';
+    currentImages = [];
+    currentImageIndex = 0;
+  }
+
+  // Show specific image in modal
+  function showImage(index) {
+    if (!currentImages.length) return;
+    modalImg.src = currentImages[index].trim();
+  }
+
+  // Show next image
+  function showNextImage() {
+    if (!currentImages.length) return;
+    currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+    showImage(currentImageIndex);
+  }
+
+  // Show previous image
+  function showPrevImage() {
+    if (!currentImages.length) return;
+    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+    showImage(currentImageIndex);
+  }
+</script>
+
 
 
 
