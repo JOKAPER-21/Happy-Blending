@@ -162,6 +162,25 @@
         img.onclick = () => showImage(i);
         thumbnailStrip.appendChild(img);
       });
+
+      // Keyboard Shortcut Handling
+document.addEventListener('keydown', (event) => {
+  if (modal.classList.contains('hidden')) return; // Ignore if modal isn't open
+
+  switch (event.key) {
+    case 'ArrowRight':
+      showNextImage();
+      break;
+    case 'ArrowLeft':
+      showPrevImage();
+      break;
+    case 'Escape':
+    case 'Backspace':
+      closeModal();
+      break;
+  }
+});
+
     }
   </script>
 
