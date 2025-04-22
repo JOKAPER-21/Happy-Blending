@@ -106,9 +106,20 @@
   </section>
 
   <!-- Modal for fullscreen image -->
-  <div id="imgModal" class="modal" onclick="closeModal()">
+  <div id="imgModal" class="modal">
+    <!-- Exit Button -->
+    <button onclick="closeModal()" class="absolute top-6 right-6 text-white bg-black/50 px-4 py-2 rounded hover:bg-black/70 z-50">Exit</button>
+  
+    <!-- Previous Button -->
+    <button onclick="showPrevImage()" class="absolute left-6 top-1/2 transform -translate-y-1/2 text-white bg-black/50 px-4 py-2 rounded hover:bg-black/70 z-50">&larr; Prev</button>
+  
+    <!-- Next Button -->
+    <button onclick="showNextImage()" class="absolute right-6 top-1/2 transform -translate-y-1/2 text-white bg-black/50 px-4 py-2 rounded hover:bg-black/70 z-50">Next &rarr;</button>
+  
+    <!-- Image -->
     <img id="modalImg" src="" alt="Fullscreen Image" />
   </div>
+
 
   <!-- Footer -->
   <footer class="text-center text-gray-500 py-6">
@@ -118,18 +129,36 @@
   <script>
     const modal = document.getElementById('imgModal');
     const modalImg = document.getElementById('modalImg');
+    const imageCards = Array.from(document.querySelectorAll('#gallery .group'));
+    let currentIndex = 0;
   
     function openModal(container) {
-      const img = container.querySelector('img');
+      currentIndex = imageCards.indexOf(container);
+      showImage(currentIndex);
       modal.classList.add('open');
-      modalImg.src = img.src;
     }
   
     function closeModal() {
       modal.classList.remove('open');
       modalImg.src = '';
     }
+  
+    function showImage(index) {
+      const img = imageCards[index].querySelector('img');
+      modalImg.src = img.src;
+    }
+  
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % imageCards.length;
+      showImage(currentIndex);
+    }
+  
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + imageCards.length) % imageCards.length;
+      showImage(currentIndex);
+    }
   </script>
+
 
 
 </body>
