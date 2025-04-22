@@ -50,6 +50,18 @@
       <p class="text-center text-gray-400 mb-12">Happy Blending!</p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
+      <!-- Image Card (with multiple images) -->
+      <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group"
+           onclick="openModal(this)"
+           data-images="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/Die%20Baby.png,https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/Die%20Baby.png,https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/Die%20Baby.png">
+        <img src="https://example.com/image1.png" alt="3D Art Multi"
+             class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
+          <h3 class="text-white text-lg font-semibold">Multi-Image Project</h3>
+          <p class="text-sm text-gray-300">April 22, 2025</p>
+        </div>
+      </div>
+        
       <!-- Image Card 1 -->
       <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group" onclick="openModal(this)">
         <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/image/Die%20Baby.png" alt="3D Art 1" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
