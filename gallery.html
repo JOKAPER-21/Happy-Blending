@@ -123,25 +123,19 @@
     </div>
   </section>
 
-  <!-- Modal for fullscreen image -->
-  <div id="imgModal" class="modal">
-    <!-- Exit Button -->
-    <button onclick="closeModal()" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-black/60 text-white text-2xl font-bold hover:bg-black/80 z-50">
-      ✕
-    </button>
+  <!-- Modal -->
+  <div id="imgModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden flex-col">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-2xl font-bold">&times;</button>
   
-    <!-- Previous Button -->
-    <button onclick="showPrevImage()" class="absolute left-6 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/60 text-white text-2xl font-bold hover:bg-black/80 z-50">
-      ←
-    </button>
+    <div class="w-full flex flex-col items-center px-4">
+      <!-- Main Image -->
+      <img id="modalImg" class="max-h-[80vh] max-w-full object-contain rounded-md shadow-lg" src="" alt="Preview" />
   
-    <!-- Next Button -->
-    <button onclick="showNextImage()" class="absolute right-6 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-black/60 text-white text-2xl font-bold hover:bg-black/80 z-50">
-      →
-    </button>
-  
-    <!-- Image Display -->
-    <img id="modalImg" src="" alt="Fullscreen Image" />
+      <!-- Thumbnails Row -->
+      <div id="thumbnailStrip" class="mt-4 flex gap-2 overflow-x-auto max-w-[90%]">
+        <!-- Thumbnails will be added here -->
+      </div>
+    </div>
   </div>
 
 
@@ -162,21 +156,23 @@
   function openModal(container) {
     const images = container.getAttribute('data-images');
     if (!images) return;
-
+  
     currentImages = images.split(',');
     currentImageIndex = 0;
     showImage(currentImageIndex);
     renderThumbnails();
-    modal.classList.add('open');
+  
+    modal.classList.remove('hidden');
   }
-
+  
   function closeModal() {
-    modal.classList.remove('open');
+    modal.classList.add('hidden');
     modalImg.src = '';
     currentImages = [];
     currentImageIndex = 0;
     thumbnailStrip.innerHTML = '';
   }
+
 
   function showImage(index) {
     if (!currentImages.length) return;
