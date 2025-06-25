@@ -12,30 +12,50 @@
 
   <!-- Navigation -->
   <nav class="bg-gray-900">
-    <div class="mx-auto relative flex items-center justify-between p-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
+      <!-- Logo -->
       <div>        
         <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition">JOKAPER</a>
       </div>
-      <div class="absolute left-1/2 transform -translate-x-1/2 space-x-8 text-sm sm:text-base">
+
+      <!-- Burger Icon -->
+      <div class="lg:hidden">
+        <button id="menu-btn" class="text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex space-x-8 text-sm sm:text-base absolute left-1/2 transform -translate-x-1/2">
         <a href="index.html" class="text-gray-300 hover:text-white transition">HOME</a>
         <a href="personal.html" class="text-gray-300 hover:text-white transition">PORTFOLIO</a>
         <a href="resume.html" class="text-blue-500">RESUME</a>
       </div>
-      <div>
+
+      <!-- Contact Button -->
+      <div class="hidden lg:block">
         <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
       </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden flex flex-col items-center space-y-4 pb-6">
+      <a href="index.html" class="text-gray-300 hover:text-white transition mobile-link">HOME</a>
+      <a href="personal.html" class="text-gray-300 hover:text-white transition mobile-link">PORTFOLIO</a>
+      <a href="resume.html" class="text-blue-500 mobile-link">RESUME</a>
+      <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition mobile-link">CONTACT</a>
     </div>
   </nav>
 
   <!-- Resume Section -->
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-8 pb-12">
-    <div class="max-w-3xl mx-auto w-full">
+    <div class="w-full max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold mb-4">Resume</h1>
       <p class="text-lg text-gray-400 mb-6">View or download my resume to learn more about my background and experience.</p>
       
-      <!-- Resume Viewer -->
-      <div class="border border-gray-700 rounded-md shadow-lg overflow-hidden mb-6 aspect-[9/13] w-full max-w-3xl mx-auto">
-        <iframe src="src/PDF/Ananthan_Resume.pdf#toolbar=0" class="w-full h-full"></iframe>
+      <!-- Resume Viewer (Responsive) -->
+      <div class="w-full aspect-[9/13] max-w-3xl mx-auto border border-gray-700 rounded-md shadow-lg overflow-hidden mb-6">
+        <iframe src="src/PDF/Ananthan_Resume.pdf#toolbar=0" class="w-full h-full" title="Resume PDF"></iframe>
       </div>
 
       <!-- Action Buttons -->
@@ -51,10 +71,38 @@
   </section>
 
   <!-- Footer -->
-  <footer class="text-center text-gray-500 py-6">
-    &copy; 2025 JOKAPER. All rights reserved.
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
+    <div class="max-w-[1170px] mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2025 JOKAPER. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="https://www.youtube.com/@jokaper-2153" target="_blank" class="hover:text-white transition">YouTube</a>
+        <a href="contact.html" class="hover:text-white transition">Contact</a>
+        <a href="resume.html" class="hover:text-white transition">Resume</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = menuBtn.querySelector('i');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-times');
+      });
+
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
