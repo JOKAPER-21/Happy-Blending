@@ -376,8 +376,8 @@
         break;
     }
   });
-  
-  // Moblie Burger button
+
+  // Mobile Menu Icon button
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIcon = menuBtn.querySelector('i');
@@ -385,7 +385,7 @@
   menuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 
-    // Toggle icon between burger and close
+    // Toggle the icon
     if (menuIcon.classList.contains('fa-bars')) {
       menuIcon.classList.remove('fa-bars');
       menuIcon.classList.add('fa-times');
@@ -393,6 +393,15 @@
       menuIcon.classList.remove('fa-times');
       menuIcon.classList.add('fa-bars');
     }
+  });
+
+  // Close menu when a mobile link is clicked
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars');
+    });
   });
 </script>
 
