@@ -1,11 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JOKAPER | Personal Projects</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/logo/Logo.ico" type="image/x-icon">  
+  <link rel="icon" href="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/logo/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body.modal-open {
@@ -15,44 +15,42 @@
 </head>
 <body class="bg-gray-950 text-white font-sans">
 
-<!-- Navigation -->
-<nav class="bg-gray-900">
-  <div class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
+  <!-- Navigation -->
+  <nav class="bg-gray-900">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
+      <!-- Logo -->
+      <div>
+        <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition">JOKAPER</a>
+      </div>
 
-    <!-- Logo -->
-    <div>
-      <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition">JOKAPER</a>
+      <!-- Burger Icon -->
+      <div class="lg:hidden">
+        <button id="menu-btn" class="text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex space-x-8 text-sm sm:text-base absolute left-1/2 transform -translate-x-1/2">
+        <a href="index.html" class="text-gray-300 hover:text-white transition">HOME</a>
+        <a href="personal.html" class="text-blue-500">PORTFOLIO</a>
+        <a href="resume.html" class="text-gray-300 hover:text-white transition">RESUME</a>
+      </div>
+
+      <!-- Contact Button -->
+      <div class="hidden lg:block">
+        <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
+      </div>
     </div>
 
-    <!-- Burger Icon -->
-    <div class="lg:hidden">
-      <button id="menu-btn" class="text-white text-2xl focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden flex flex-col items-center space-y-4 pb-6">
+      <a href="index.html" class="text-gray-300 hover:text-white transition mobile-link">HOME</a>
+      <a href="personal.html" class="text-blue-500 mobile-link">PORTFOLIO</a>
+      <a href="resume.html" class="text-gray-300 hover:text-white transition mobile-link">RESUME</a>
+      <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition mobile-link">CONTACT</a>
     </div>
-
-    <!-- Desktop Menu -->
-    <div class="hidden lg:flex space-x-8 text-sm sm:text-base absolute left-1/2 transform -translate-x-1/2">
-      <a href="index.html" class="text-gray-300 hover:text-white transition">HOME</a>
-      <a href="personal.html" class="text-blue-500">PORTFOLIO</a>
-      <a href="resume.html" class="text-gray-300 hover:text-white transition">RESUME</a>
-    </div>
-
-    <!-- Contact Button (Desktop) -->
-    <div class="hidden lg:block">
-      <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
-    </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden hidden flex flex-col items-center space-y-4 pb-6">
-    <a href="index.html" class="text-gray-300 hover:text-white transition mobile-link">HOME</a>
-    <a href="personal.html" class="text-blue-500 mobile-link">PORTFOLIO</a>
-    <a href="resume.html" class="text-gray-300 hover:text-white transition mobile-link">RESUME</a>
-    <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition mobile-link">CONTACT</a>
-  </div>
-</nav>
-
+  </nav>
 
   <!-- Sub-header Tab -->
   <div class="bg-gray-800">
@@ -292,119 +290,109 @@
       </div>
     </div>
   </footer>
-  
 
-<script>
-  const modal = document.getElementById('imgModal');
-  const modalImg = document.getElementById('modalImg');
-  const thumbnailStrip = document.getElementById('thumbnailStrip');
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuBtn.querySelector('i');
 
-  let currentImages = [];
-  let currentImageIndex = 0;
-
-  function openModal(container) {
-    const images = container.getAttribute('data-images');
-    if (!images) return;
-
-    currentImages = images.split(',');
-    currentImageIndex = 0;
-    showImage(currentImageIndex);
-    renderThumbnails();
-
-    modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-  }
-
-  function closeModal() {
-    modal.classList.add('hidden');
-    document.body.classList.remove('modal-open');
-    modalImg.src = '';
-    currentImages = [];
-    currentImageIndex = 0;
-    thumbnailStrip.innerHTML = '';
-  }
-
-  function showImage(index) {
-    if (!currentImages.length) return;
-    currentImageIndex = index;
-    modalImg.src = currentImages[index].trim();
-
-    const thumbs = thumbnailStrip.querySelectorAll('img');
-    thumbs.forEach((img, i) => {
-      img.classList.toggle('ring-4', i === index);
-      img.classList.toggle('ring-blue-500', i === index);
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-times');
     });
-  }
 
-  function renderThumbnails() {
-    thumbnailStrip.innerHTML = '';
-    currentImages.forEach((src, i) => {
-      const img = document.createElement('img');
-      img.src = src.trim();
-      img.className = "w-16 h-16 object-cover rounded-md cursor-pointer transition hover:scale-105";
-      img.onclick = () => showImage(i);
-      thumbnailStrip.appendChild(img);
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+      });
     });
-  }
 
-  function showNextImage() {
-    if (currentImageIndex < currentImages.length - 1) {
-      showImage(currentImageIndex + 1);
+    // Modal functions (your original modal script unchanged)
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    const thumbnailStrip = document.getElementById('thumbnailStrip');
+
+    let currentImages = [];
+    let currentImageIndex = 0;
+
+    function openModal(container) {
+      const images = container.getAttribute('data-images');
+      if (!images) return;
+
+      currentImages = images.split(',');
+      currentImageIndex = 0;
+      showImage(currentImageIndex);
+      renderThumbnails();
+
+      modal.classList.remove('hidden');
+      document.body.classList.add('modal-open');
     }
-  }
 
-  function showPrevImage() {
-    if (currentImageIndex > 0) {
-      showImage(currentImageIndex - 1);
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+      modalImg.src = '';
+      currentImages = [];
+      currentImageIndex = 0;
+      thumbnailStrip.innerHTML = '';
     }
-  }
 
-  // ✅ Keyboard Shortcut Handling (Outside any function)
-  document.addEventListener('keydown', (event) => {
-    if (modal.classList.contains('hidden')) return;
+    function showImage(index) {
+      if (!currentImages.length) return;
+      currentImageIndex = index;
+      modalImg.src = currentImages[index].trim();
 
-    switch (event.key) {
-      case 'ArrowRight':
-        showNextImage();
-        break;
-      case 'ArrowLeft':
-        showPrevImage();
-        break;
-      case 'Escape':
-      case 'Backspace':
-        closeModal();
-        break;
+      const thumbs = thumbnailStrip.querySelectorAll('img');
+      thumbs.forEach((img, i) => {
+        img.classList.toggle('ring-4', i === index);
+        img.classList.toggle('ring-blue-500', i === index);
+      });
     }
-  });
 
-  // Mobile Menu Icon button
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = menuBtn.querySelector('i');
-
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-
-    // Toggle the icon
-    if (menuIcon.classList.contains('fa-bars')) {
-      menuIcon.classList.remove('fa-bars');
-      menuIcon.classList.add('fa-times');
-    } else {
-      menuIcon.classList.remove('fa-times');
-      menuIcon.classList.add('fa-bars');
+    function renderThumbnails() {
+      thumbnailStrip.innerHTML = '';
+      currentImages.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src.trim();
+        img.className = "w-16 h-16 object-cover rounded-md cursor-pointer transition hover:scale-105";
+        img.onclick = () => showImage(i);
+        thumbnailStrip.appendChild(img);
+      });
     }
-  });
 
-  // Close menu when a mobile link is clicked
-  document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuIcon.classList.remove('fa-times');
-      menuIcon.classList.add('fa-bars');
+    function showNextImage() {
+      if (currentImageIndex < currentImages.length - 1) {
+        showImage(currentImageIndex + 1);
+      }
+    }
+
+    function showPrevImage() {
+      if (currentImageIndex > 0) {
+        showImage(currentImageIndex - 1);
+      }
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (modal.classList.contains('hidden')) return;
+
+      switch (event.key) {
+        case 'ArrowRight':
+          showNextImage();
+          break;
+        case 'ArrowLeft':
+          showPrevImage();
+          break;
+        case 'Escape':
+        case 'Backspace':
+          closeModal();
+          break;
+      }
     });
-  });
-</script>
-
-
+  </script>
 </body>
 </html>
