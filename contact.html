@@ -5,21 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JOKAPER | Contact</title>
   <link rel="icon" href="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/logo/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Ensure the body takes up the full height */
     body {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
-
-    /* Footer style */
     footer {
-      background-color: #1f1f1f; /* Set footer background color */
-      color: #999999; /* Set footer text color */
-      margin-top: auto; /* Push the footer to the bottom */
-      width: 100%; /* Ensure footer spans the full width */
+      background-color: #1f1f1f;
+      color: #999999;
+      margin-top: auto;
+      width: 100%;
     }
   </style>
 </head>
@@ -27,25 +25,38 @@
 
   <!-- Navigation -->
   <nav class="bg-gray-900">
-    <div class="mx-auto relative flex items-center justify-between p-6">
-      
-      <!-- Left: Logo -->
-      <div>        
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
+      <!-- Logo -->
+      <div>
         <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition">JOKAPER</a>
       </div>
 
-      <!-- Center: Main Links -->
-      <div class="absolute left-1/2 transform -translate-x-1/2 space-x-8 text-sm sm:text-base">
+      <!-- Burger Icon -->
+      <div class="lg:hidden">
+        <button id="menu-btn" class="text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex space-x-8 text-sm sm:text-base absolute left-1/2 transform -translate-x-1/2">
         <a href="index.html" class="text-gray-300 hover:text-white transition">HOME</a>
         <a href="personal.html" class="text-gray-300 hover:text-white transition">PORTFOLIO</a>
         <a href="resume.html" class="text-gray-300 hover:text-white transition">RESUME</a>
       </div>
 
-      <!-- Right: Contact -->
-      <div>
+      <!-- Contact Button -->
+      <div class="hidden lg:block">
         <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
       </div>
+    </div>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden flex flex-col items-center space-y-4 pb-6">
+      <a href="index.html" class="text-gray-300 hover:text-white transition mobile-link">HOME</a>
+      <a href="personal.html" class="text-gray-300 hover:text-white transition mobile-link">PORTFOLIO</a>
+      <a href="resume.html" class="text-gray-300 hover:text-white transition mobile-link">RESUME</a>
+      <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition mobile-link">CONTACT</a>
     </div>
   </nav>
 
@@ -68,6 +79,29 @@
   <footer class="text-center text-gray-500 py-6">
     &copy; 2025 JOKAPER. All rights reserved.
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = menuBtn.querySelector('i');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuIcon.classList.toggle('fa-bars');
+        menuIcon.classList.toggle('fa-times');
+      });
+
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
