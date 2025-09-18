@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOKAPER | Work Projects</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/logo/Logo.ico" type="image/x-icon">  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body.modal-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-gray-900">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
+      
+      <!-- Logo -->
+      <div>
+        <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition">JOKAPER</a>
+      </div>
+  
+      <!-- Burger Icon -->
+      <div class="lg:hidden">
+        <button id="menu-btn" class="text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+  
+      <!-- Links: Desktop -->
+      <div class="hidden lg:flex space-x-8 text-sm sm:text-base absolute left-1/2 transform -translate-x-1/2">
+        <a href="index.html" class="text-gray-300 hover:text-white transition">HOME</a>
+        <a href="personal.html" class="text-blue-500">PORTFOLIO</a>
+        <a href="https://jokaper-21.github.io/LinkHub/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition">LINKHUB</a>
+        <!-- <a href="resume.html" class="text-gray-300 hover:text-white transition">RESUME</a> -->
+      </div>
+  
+      <!-- Contact Button -->
+      <div class="hidden lg:block">
+        <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden flex flex-col items-center space-y-4 pb-6">
+      <a href="index.html" class="text-gray-300 hover:text-white transition">HOME</a>
+      <a href="personal.html" class="text-blue-500">PORTFOLIO</a>
+      <a href="https://jokaper-21.github.io/LinkHub/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition">LINKHUB</a>
+      <!-- <a href="resume.html" class="text-gray-300 hover:text-white transition">RESUME</a> -->
+      <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
+    </div>
+  </nav>
+
+  <!-- Sub-header Tab -->
+  <div class="sticky top-0 z-40 bg-gray-800 backdrop-blur bg-opacity-80">
+    <div class="max-w-[1170px] mx-auto flex justify-center gap-20 p-3">
+      <a href="personal.html" class="text-gray-300 hover:text-white transition">PERSONAL</a>
+      <a href="work.html" class="text-blue-500">WORK</a>
+      <a href="showreel.html" class="text-gray-300 hover:text-white transition">SHOWREEL</a>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-12 px-4">
+    <div class="max-w-[1170px] mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-4">Work Projects</h2>
+      <p class="text-center text-gray-400 mb-8">Zebu Animation Studios</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Piece by Piece -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/src/thumbnail/Piece_by_Piece.jpg" alt="Piece_by_Piece"
+                 class="w-full h-full object-cover transition duration-300 group-hover:scale-105"/>
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Piece by Piece</h3>
+              <p class="text-sm text-gray-300">Pharrell Williams</p>
+            </div>
+            <a href="https://www.hotstar.com/in/movies/piece-by-piece/1271400916?search_query=piece+by+piece"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fas fa-tv"></i> Watch on Hotstar
+            </a>
+          </div>
+        </div>
+
+        <!-- Hanumankind Big Dawgs -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/main/src/thumbnail/Hanumankind_Big_Dawgs.avif" alt="Hanumankind_Big_Dawgs"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Hanumankind x Kalmi</h3>
+              <p class="text-sm text-gray-300">Big Dawgs in Lego</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=UMVaeoqQyf0"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+        
+        <!-- Suppandi_Ep_01 -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/thumbnail/Suppandi_Ep_01.avif" alt="Suppandi_ep_01"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Suppandi - Sparkly Clean</h3>
+              <p class="text-sm text-gray-300">Episode 01</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=YvXCGHPI_tM&list=PL51JScfFH33_uE7Gr9WShZuCidEaqwsvU&index=10"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Suppandi_Ep_02 -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/thumbnail/Suppandi_Ep_02.avif" alt="Suppandi_ep_02"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Suppandi - Shelf Help</h3>
+              <p class="text-sm text-gray-300">Episode 02</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=7DGUappvxng&list=PL51JScfFH33_uE7Gr9WShZuCidEaqwsvU&index=8"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Suppandi_Ep_03 -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/thumbnail/Suppandi_Ep_03.avif" alt="Suppandi_ep_03"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Suppandi - A Meowgical Act</h3>
+              <p class="text-sm text-gray-300">Episode 03</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=eyNmP3pD9qU&list=PL51JScfFH33_uE7Gr9WShZuCidEaqwsvU&index=6"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Suppandi_Ep_04 -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/thumbnail/Suppandi_Ep_04.avif" alt="Suppandi_ep_04"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Suppandi - The Viral Spiral</h3>
+              <p class="text-sm text-gray-300">Episode 04</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=vazxHhL6t3k&list=PL51JScfFH33_uE7Gr9WShZuCidEaqwsvU&index=4"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Suppandi_Ep_05 -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/thumbnail/Suppandi_Ep_05.avif" alt="Suppandi_ep_05"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Suppandi - Timing Trouble</h3>
+              <p class="text-sm text-gray-300">Episode 05</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=PPZTzjDxvWY&list=PL51JScfFH33_uE7Gr9WShZuCidEaqwsvU&index=1"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+
+
+        <!-- Suppandi_Ep_06 -->
+        <div class="relative rounded-lg shadow-md cursor-pointer overflow-hidden group flex flex-col justify-between">
+          <!-- Aspect Ratio Box for 16:9 -->
+          <div class="w-full aspect-[16/9] overflow-hidden">
+            <img src="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/thumbnail/Suppandi_Ep_06.avif" alt="Suppandi_ep_05"
+                class="w-full h-full object-cover transition duration-300 group-hover:scale-105" />
+          </div>
+          <div class="bg-black/80 p-4 flex flex-col gap-2">
+            <div>
+              <h3 class="text-white text-lg font-semibold">Suppandi - Where Did The Time Go</h3>
+              <p class="text-sm text-gray-300">Episode 06</p>
+            </div>
+            <a href="https://www.youtube.com/watch?v=JxtgVWKERFw&list=PL51JScfFH33_uE7Gr9WShZuCidEaqwsvU&index=1"
+              target="_blank"
+              class="mt-2 inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition">
+              <i class="fab fa-youtube"></i> Watch on YouTube
+            </a>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Modal -->
+  <div id="imgModal" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 hidden flex-col">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+    <div class="w-full max-w-4xl px-4 flex flex-col items-center">
+      <img id="modalImg" class="max-h-[80vh] max-w-full object-contain rounded-lg shadow-lg" src="" alt="Preview" />
+      <div id="thumbnailStrip" class="mt-6 flex gap-3 justify-center flex-wrap"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
+    <div class="max-w-[1170px] mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2025 JOKAPER. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="https://www.youtube.com/@jokaper-2153" target="_blank" class="hover:text-white transition">YouTube</a>
+        <a href="contact.html" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImg');
+  const thumbnailStrip = document.getElementById('thumbnailStrip');
+
+  let currentImages = [];
+  let currentImageIndex = 0;
+
+  function openModal(container) {
+    const images = container.getAttribute('data-images');
+    if (!images) return;
+
+    currentImages = images.split(',');
+    currentImageIndex = 0;
+    showImage(currentImageIndex);
+    renderThumbnails();
+
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    document.body.classList.remove('modal-open');
+    modalImg.src = '';
+    currentImages = [];
+    currentImageIndex = 0;
+    thumbnailStrip.innerHTML = '';
+  }
+
+  function showImage(index) {
+    if (!currentImages.length) return;
+    currentImageIndex = index;
+    modalImg.src = currentImages[index].trim();
+
+    const thumbs = thumbnailStrip.querySelectorAll('img');
+    thumbs.forEach((img, i) => {
+      img.classList.toggle('ring-4', i === index);
+      img.classList.toggle('ring-blue-500', i === index);
+    });
+  }
+
+  function renderThumbnails() {
+    thumbnailStrip.innerHTML = '';
+    currentImages.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src.trim();
+      img.className = "w-16 h-16 object-cover rounded-md cursor-pointer transition hover:scale-105";
+      img.onclick = () => showImage(i);
+      thumbnailStrip.appendChild(img);
+    });
+  }
+
+  function showNextImage() {
+    if (currentImageIndex < currentImages.length - 1) {
+      showImage(currentImageIndex + 1);
+    }
+  }
+
+  function showPrevImage() {
+    if (currentImageIndex > 0) {
+      showImage(currentImageIndex - 1);
+    }
+  }
+
+  // ✅ Keyboard Shortcut Handling (Outside any function)
+  document.addEventListener('keydown', (event) => {
+    if (modal.classList.contains('hidden')) return;
+
+    switch (event.key) {
+      case 'ArrowRight':
+        showNextImage();
+        break;
+      case 'ArrowLeft':
+        showPrevImage();
+        break;
+      case 'Escape':
+      case 'Backspace':
+        closeModal();
+        break;
+    }
+  });
+
+  // Moblie Burger button
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = menuBtn.querySelector('i');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+
+    // Toggle icon between burger and close
+    if (menuIcon.classList.contains('fa-bars')) {
+      menuIcon.classList.remove('fa-bars');
+      menuIcon.classList.add('fa-times');
+    } else {
+      menuIcon.classList.remove('fa-times');
+      menuIcon.classList.add('fa-bars');
+    }
+  });
+</script>
+
+
+</body>
+</html>

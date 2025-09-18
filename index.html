@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOKAPER | Happy Blending!</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/JOKAPER-21/Happy-Blending/refs/heads/main/src/logo/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+  <!-- Navigation -->
+  <nav class="bg-gray-900">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-6 relative">
+      
+      <!-- Logo -->
+      <div>
+        <a href="index.html" class="text-3xl font-bold text-white hover:text-blue-500 transition">JOKAPER</a>
+      </div>
+  
+      <!-- Burger Icon -->
+      <div class="lg:hidden">
+        <button id="menu-btn" class="text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+  
+      <!-- Links: Desktop --> 
+      <div class="hidden lg:flex space-x-8 text-sm sm:text-base absolute left-1/2 transform -translate-x-1/2"> 
+        <a href="index.html" class="text-blue-500">HOME</a> 
+        <a href="personal.html" class="text-gray-300 hover:text-white transition">PORTFOLIO</a> 
+        <a href="https://jokaper-21.github.io/LinkHub/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition">LINKHUB</a>
+        <!-- <a href="resume.html" class="text-gray-300 hover:text-white transition">RESUME</a>  -->
+      </div>
+  
+      <!-- Contact Button -->
+      <div class="hidden lg:block">
+        <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden flex flex-col items-center space-y-4 pb-6">
+      <a href="index.html" class="text-blue-500">HOME</a>
+      <a href="personal.html" class="text-gray-300 hover:text-white transition">PORTFOLIO</a>
+      <a href="https://jokaper-21.github.io/LinkHub/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition">LINKHUB</a>
+      <!-- <a href="resume.html" class="text-gray-300 hover:text-white transition">RESUME</a> -->
+      <a href="contact.html" class="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-full font-medium text-sm transition">CONTACT</a>
+    </div>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+    <div class="max-w-[1170px] w-full mx-auto">
+      <h1 class="text-5xl font-bold mb-4">Hi, I'm <span class="text-blue-500">ANANTHAN</span></h1>
+      <p class="text-xl font-semibold text-gray-400 mb-4">Happy Blending!</p>
+      <p class="text-lg max-w-xl mx-auto">Welcome to my portfolio, I create visually striking 3D environments, props, characters, and animations.</p> <br>
+      
+      <!-- View My Personal Button -->
+      <a href="personal.html" class="mt-6 inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-full font-medium transition">Let's explore</a><br>
+
+      <!-- Social Buttons -->
+      <div class="mt-6 flex justify-center space-x-4">
+        <!-- Instagram New Profile -->
+        <a href="https://www.instagram.com/jokaper21/" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-pink-600 flex items-center justify-center transition">
+          <i class="fab fa-instagram text-xl font-bold text-white"></i>
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@jokaper21" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-red-600 flex items-center justify-center transition">
+          <i class="fab fa-youtube text-xl font-bold text-white"></i>
+        </a>
+        <!-- CGTrader -->
+        <a href="https://www.cgtrader.com/designers/JOKAPER-21?referral_id=5072225" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-green-500 flex items-center justify-center transition">
+          <i class="fas fa-cube text-xl font-bold text-white"></i> <!-- using cube icon as CGTrader icon alt -->
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/ananthan-m-8b149727a/" target="_blank" class="w-12 h-12 rounded-full bg-gray-800 hover:bg-blue-700 flex items-center justify-center transition">
+          <i class="fab fa-linkedin-in text-xl font-bold text-white"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-6 mt-12">
+    <div class="max-w-[1170px] mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>&copy; 2025 JOKAPER. All rights reserved.</p>
+      <div class="flex space-x-4">
+        <a href="https://www.youtube.com/@jokaper-2153" target="_blank" class="hover:text-white transition">YouTube</a>
+        <a href="contact.html" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+  </footer>
+  
+  <!--Burger button for moblie-->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = menuBtn.querySelector('i');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+
+      // Toggle icon between burger and close
+      if (menuIcon.classList.contains('fa-bars')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+      } else {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+      }
+    });
+  </script>
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+
